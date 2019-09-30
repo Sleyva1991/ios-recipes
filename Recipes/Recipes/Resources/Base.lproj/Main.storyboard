@@ -93,20 +93,48 @@
             </objects>
             <point key="canvasLocation" x="5428" y="-2831"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipes View Controller-->
         <scene sceneID="s3Y-NC-Sq8">
             <objects>
-                <viewController id="iGW-bx-FIV" sceneMemberID="viewController">
+                <viewController id="iGW-bx-FIV" customClass="RecipesViewController" customModule="Recipes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9og-f2-g43">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="747"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wjk-nN-5fU">
+                                <rect key="frame" x="0.0" y="66" width="414" height="681"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVE-e1-qaJ">
+                                <rect key="frame" x="161" y="8" width="99" height="47"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="39"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yOD-P4-flS" firstAttribute="trailing" secondItem="TVE-e1-qaJ" secondAttribute="trailing" constant="154" id="4lO-ez-L4e"/>
+                            <constraint firstItem="wjk-nN-5fU" firstAttribute="trailing" secondItem="yOD-P4-flS" secondAttribute="trailing" id="CF4-Tw-TUr"/>
+                            <constraint firstItem="wjk-nN-5fU" firstAttribute="leading" secondItem="yOD-P4-flS" secondAttribute="leading" id="fkJ-R8-gPA"/>
+                            <constraint firstItem="wjk-nN-5fU" firstAttribute="top" secondItem="TVE-e1-qaJ" secondAttribute="bottom" constant="11" id="nlz-A3-TSZ"/>
+                            <constraint firstItem="TVE-e1-qaJ" firstAttribute="top" secondItem="9og-f2-g43" secondAttribute="top" constant="8" id="taX-tf-MRL"/>
+                            <constraint firstItem="TVE-e1-qaJ" firstAttribute="leading" secondItem="yOD-P4-flS" secondAttribute="leading" constant="161" id="w2g-s6-lem"/>
+                            <constraint firstAttribute="bottom" secondItem="wjk-nN-5fU" secondAttribute="bottom" id="wRA-VP-KTD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yOD-P4-flS"/>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="TVE-e1-qaJ" id="sbs-JX-Nem"/>
+                        <outlet property="recipeTextView" destination="wjk-nN-5fU" id="cfv-dk-wMG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9V-E6-BhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6262" y="-2831"/>
+            <point key="canvasLocation" x="6260.8695652173919" y="-2831.5848214285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fTO-2m-FgE">

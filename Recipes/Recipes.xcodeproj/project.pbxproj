@@ -15,6 +15,7 @@
 		9DA0F0872117E40100A99E97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA0F0852117E40100A99E97 /* LaunchScreen.storyboard */; };
 		E8E3AD642342A82900C79704 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E3AD632342A82900C79704 /* MainViewController.swift */; };
 		E8E3AD662342A92600C79704 /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E3AD652342A92600C79704 /* RecipesTableViewController.swift */; };
+		E8E3AD682342AD0C00C79704 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E3AD672342AD0C00C79704 /* RecipesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9DA0F0882117E40100A99E97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8E3AD632342A82900C79704 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E8E3AD652342A92600C79704 /* RecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
+		E8E3AD672342AD0C00C79704 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				E8E3AD632342A82900C79704 /* MainViewController.swift */,
 				E8E3AD652342A92600C79704 /* RecipesTableViewController.swift */,
+				E8E3AD672342AD0C00C79704 /* RecipesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				9DA0F07D2117E3F800A99E97 /* AppDelegate.swift in Sources */,
 				9D59B52C2117F533002FB7CD /* Recipe.swift in Sources */,
 				E8E3AD642342A82900C79704 /* MainViewController.swift in Sources */,
+				E8E3AD682342AD0C00C79704 /* RecipesViewController.swift in Sources */,
 				E8E3AD662342A92600C79704 /* RecipesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

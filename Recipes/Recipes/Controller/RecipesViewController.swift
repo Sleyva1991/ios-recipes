@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  RecipesViewController.swift
 //  Recipes
 //
 //  Created by Steven Leyva on 9/30/19.
@@ -8,19 +8,14 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class RecipesViewController: UIViewController {
     
-    @IBOutlet weak var searchTextfield: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var recipeTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-   
-    @IBAction func recipesTextfield(_ sender: Any) {
-        
-        
     }
     
 
