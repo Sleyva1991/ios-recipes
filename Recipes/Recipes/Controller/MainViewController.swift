@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
     
     let networkClient = RecipesNetworkClient()
     var allRecipes: [Recipe] = []
+    var recipesTableViewController: RecipesTableViewController?
+    var filteredRecipes:[Recipe] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,21 +28,38 @@ class MainViewController: UIViewController {
         }
         
     }
+    
+    func filterRecipes() {
+        guard let searchterm = searchTextfield.text, !searchterm.isEmpty else {
+            filteredRecipes = allRecipes
+            return
+        }
+        
+        filteredRecipes = allRecipes.filter({ (recipe) -> Bool in
+            if recipe.name.contains(searchterm) || recipe.instructions.contains(searchterm) {
+                return true
+            } else {
+                return false
+            }
+        })
+        
+    }
    
     @IBAction func recipesTextfield(_ sender: Any) {
-        
+        resignFirstResponder()
+        filterRecipes()
         
     }
     
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "RecipeSegue" {
+            guard let showDetailVC = segue.destination as? RecipesTableViewController else { return }
+            showDetailVC.recipes = allRecipes
+        }
     }
-    */
+ 
 
 }
