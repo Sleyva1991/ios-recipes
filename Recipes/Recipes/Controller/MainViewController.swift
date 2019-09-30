@@ -13,9 +13,25 @@ class MainViewController: UIViewController {
     @IBOutlet weak var searchTextfield: UITextField!
     
     let networkClient = RecipesNetworkClient()
-    var allRecipes: [Recipe] = []
-    var recipesTableViewController: RecipesTableViewController?
-    var filteredRecipes:[Recipe] = []
+    
+    var allRecipes: [Recipe] = [] {
+        didSet {
+            filterRecipes()
+        }
+    }
+    
+    
+    var recipesTableViewController: RecipesTableViewController? {
+        didSet {
+            recipesTableViewController?.recipes = filteredRecipes
+        }
+    }
+    
+    var filteredRecipes:[Recipe] = [] {
+        didSet {
+            recipesTableViewController?.recipes = filteredRecipes
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +40,11 @@ class MainViewController: UIViewController {
             if let error = error {
                 NSLog("Error Fetching Recipes: \(error)")
                 return
+            }
+            guard let allRecipes = allRecipes else { return }
+            
+            DispatchQueue.main.async {
+                self.allRecipes = allRecipes
             }
         }
         
@@ -57,6 +78,8 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RecipeSegue" {
             guard let showDetailVC = segue.destination as? RecipesTableViewController else { return }
+            recipesTableViewController = nil
+            recipesTableViewController = showDetailVC
             showDetailVC.recipes = allRecipes
         }
     }
