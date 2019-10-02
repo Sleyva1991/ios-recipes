@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var searchTextfield: UITextField!
     
+    
     let networkClient = RecipesNetworkClient()
     
     var allRecipes: [Recipe] = [] {
@@ -36,15 +37,14 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        networkClient.fetchRecipes { (allRecipes, error) in
+        networkClient.fetchRecipes { (recipes, error) in
             if let error = error {
                 NSLog("Error Fetching Recipes: \(error)")
                 return
             }
-            guard let allRecipes = allRecipes else { return }
             
             DispatchQueue.main.async {
-                self.allRecipes = allRecipes
+                self.allRecipes = recipes ?? []
             }
         }
         
@@ -76,11 +76,9 @@ class MainViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "RecipeSegue" {
-            guard let showDetailVC = segue.destination as? RecipesTableViewController else { return }
-            recipesTableViewController = nil
-            recipesTableViewController = showDetailVC
-            showDetailVC.recipes = allRecipes
+        if segue.identifier == "TableSegue" {
+            recipesTableViewController = (segue.destination as! RecipesTableViewController)
+            
         }
     }
  

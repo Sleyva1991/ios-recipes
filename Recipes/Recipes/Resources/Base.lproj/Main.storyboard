@@ -24,14 +24,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="recipesTextfield:" destination="f0A-sr-vpz" eventType="editingDidEndOnExit" id="Vpj-bk-JlJ"/>
-                                    <action selector="recipiesTexfieldTapped:" destination="f0A-sr-vpz" eventType="editingDidEnd" id="tvl-Wr-def"/>
+                                    <action selector="recipesTextfield:" destination="f0A-sr-vpz" eventType="editingDidEnd" id="DmD-AB-44e"/>
                                 </connections>
                             </textField>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0J-Y7-2Eh">
                                 <rect key="frame" x="0.0" y="149" width="414" height="747"/>
                                 <connections>
-                                    <segue destination="weC-oI-T8G" kind="embed" id="gIU-yd-0M8"/>
+                                    <segue destination="weC-oI-T8G" kind="embed" identifier="TableSegue" id="gIU-yd-0M8"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -48,6 +47,9 @@
                         <viewLayoutGuide key="safeArea" id="Cpa-dX-N1I"/>
                     </view>
                     <navigationItem key="navigationItem" id="7h3-ms-OYj"/>
+                    <connections>
+                        <outlet property="searchTextfield" destination="2tQ-nv-pHH" id="zKK-dF-sD8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXF-eZ-MaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
